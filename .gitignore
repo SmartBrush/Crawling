@@ -1,0 +1,40 @@
+# 가상환경
+venv/
+myvenv/
+.env/
+
+# PyCharm 설정
+.idea/
+
+# VSCode 설정
+.vscode/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 로그
+*.log
+
+# 실행파일
+*.exe
+*.out
+*.app
+
+# Jupyter Notebook 체크포인트
+.ipynb_checkpoints/
+
+# 크롤링 중 생성된 임시 파일
+*.csv
+*.json
+*.db
+*.sqlite
+
+# 환경설정 파일
+.env
+.DS_Store
+
+# 테스트 결과
+htmlcov/
+coverage.xml
