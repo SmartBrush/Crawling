@@ -13,7 +13,7 @@ options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Apple
 driver = webdriver.Chrome(options=options)
 
 # 2. 접속할 URL (사용자 UI 페이지)
-url = "https://www.oliveyoung.co.kr/store/display/getMCategoryList.do?dispCatNo=100000100040013&fltDispCatNo=&prdSort=01&pageIdx=1&rowsPerPage=500"
+url = "https://www.oliveyoung.co.kr/store/display/getMCategoryList.do?dispCatNo=100000100040013&fltDispCatNo=&prdSort=01&pageIdx=1&rowsPerPage=200"
 driver.get(url)
 
 # 3. 로딩 기다리기
@@ -27,12 +27,14 @@ items = driver.find_elements(By.CSS_SELECTOR, "div.prd_info")
 result = []
 for item in items:
     try:
+        brand = item.find_element(By.CSS_SELECTOR, "span.tx_brand").text.strip()
         name = item.find_element(By.CSS_SELECTOR, "p.tx_name").text.strip()
         price = item.find_element(By.CSS_SELECTOR, "span.tx_cur > span.tx_num").text.strip()
         image = item.find_element(By.CSS_SELECTOR, "img").get_attribute("src")
         link = item.find_element(By.CSS_SELECTOR, "a").get_attribute("href")
 
         result.append({
+            "brand": brand,
             "name": name,
             "price": price,
             "image": image,
