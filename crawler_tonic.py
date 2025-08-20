@@ -13,7 +13,7 @@ options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Apple
 driver = webdriver.Chrome(options=options)
 
 # 2. 접속할 URL (사용자 UI 페이지)
-url = "https://www.oliveyoung.co.kr/store/display/getMCategoryList.do?dispCatNo=100000100040014&fltDispCatNo=&prdSort=01&pageIdx=1&rowsPerPage=200"
+url = "https://www.oliveyoung.co.kr/store/display/getMCategoryList.do?dispCatNo=100000100040014&fltDispCatNo=&prdSort=01&pageIdx=1&rowsPerPage=150"
 driver.get(url)
 
 # 3. 로딩 기다리기

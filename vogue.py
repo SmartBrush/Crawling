@@ -21,7 +21,7 @@ WebDriverWait(driver, 10).until(
     EC.presence_of_element_located((By.CSS_SELECTOR, "ul#post_list > li"))
 )
 
-# ✅ 4. 스크롤 4회 반복 (스크롤 후 2초 대기)
+# 4. 스크롤 4회 반복 (스크롤 후 2초 대기)
 for _ in range(4):
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     time.sleep(2)
